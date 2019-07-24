@@ -1,0 +1,44 @@
+<!-- <a>{{data|json}}</a> -->
+<div class="container" style=" overflow-x: auto">
+    <div class="table-responsive" style="overflow-x: auto">
+        <table class="table table-striped" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5"
+               style="overflow-x: scroll">
+            <thead>
+            <tr>
+                <th scope="col">
+                    <mfDefaultSorter>User Name</mfDefaultSorter>
+                </th>
+                <th scope="col">
+                    <mfDefaultSorter>Email</mfDefaultSorter>
+                </th>
+                <th scope="col">
+                    <mfDefaultSorter>Age</mfDefaultSorter>
+                </th>
+                <th scope="col">
+                    <mfDefaultSorter>Phone</mfDefaultSorter>
+                </th>
+                <th scope="col">
+                    <mfDefaultSorter>Edit</mfDefaultSorter>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let measured of mf.data">
+                <td scope="row">{{measured.user_name}}</td>
+                <td>{{measured.user_email}}</td>
+                <td>{{measured.user_age}}</td>
+                <td>{{measured.user_phone}}</td>
+   <td>
+       <button (click)='editDetails(measured)'>Edit</button>
+   </td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <td colspan="5">
+                    <mfBootstrapPaginator [rowsOnPageSet]="[5,10,15]"></mfBootstrapPaginator>
+                </td>
+            </tr>
+            </tfoot>
+        </table>
+        </div></div>

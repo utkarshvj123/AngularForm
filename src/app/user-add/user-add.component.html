@@ -1,0 +1,67 @@
+<div class="card">
+    <div class="container">
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+          <div class="row">
+          <div class="col-4">
+            <label class="label">Name</label>
+        </div>
+        <div class="col-8">
+            <input type="text" class="form-control" formControlName="name">
+        </div>
+    </div>
+    <div *ngIf="myForm.controls['name'].invalid && (myForm.controls['name'].dirty || myForm.controls['name'].touched)" class="alert alert-danger">
+        <div *ngIf="myForm.controls['name'].errors.required">
+        Name is required.
+      </div>
+    </div>
+    <hr>
+        <div class="row">
+            <div class="col-4">
+            <label class="label">Email</label>
+            </div>
+            <div class="col-8">
+            <input type="text" class="form-control" formControlName="email">
+            </div>
+    </div>
+    <div *ngIf="myForm.controls['email'].invalid && (myForm.controls['email'].dirty || myForm.controls['email'].touched)" class="alert alert-danger">
+        <div *ngIf="myForm.controls['email'].errors.required">
+        Email is required.
+      </div>
+      <div *ngIf="myForm.controls['email'].errors.email">Email must be a valid email address</div>
+    </div>
+    <hr>
+    <div class="row">
+            <div class="col-4">  
+        <label class="label">Age</label>
+           </div>
+           <div class="col-8">
+           <input type="text" class="form-control" formControlName="age" required>
+           </div>
+    </div>
+    <div *ngIf="myForm.controls['age'].invalid && (myForm.controls['age'].dirty || myForm.controls['age'].touched)" class="alert alert-danger">
+        <div *ngIf="myForm.controls['age'].errors.required">
+        Age is required.
+      </div>
+      </div>
+   
+    <hr>
+    <div class="row">
+            <div class="col-4">
+            <label class="label">Mobile No.</label>
+            </div>
+            <div class="col-8">
+            <input type="number" required class="form-control" formControlName="phone">
+            </div>
+    </div>
+    <div *ngIf="myForm.controls['phone'].invalid && (myForm.controls['phone'].dirty || myForm.controls['phone'].touched)" class="alert alert-danger">
+        <div *ngIf="myForm.controls['phone'].errors.required">
+         Mobile no. is required.
+      </div>
+      </div>
+    <hr>
+    <div class="row">
+            <button class="btn btn-success" [disabled]="!myForm.valid" type="submit">click me</button>
+        </div>
+        </form>
+    </div>
+    </div>

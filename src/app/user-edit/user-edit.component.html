@@ -1,0 +1,45 @@
+<div class="card">
+    <div class="container">
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+          <div class="row">
+          <div class="col-4">
+            <label class="label">Name</label>
+        </div>
+        <div class="col-8">
+            <input type="text" class="form-control" formControlName="name">
+        </div>
+    </div>
+    <hr>
+        <div class="row">
+            <div class="col-4">
+            <label class="label">Email</label>
+            </div>
+            <div class="col-8">
+            <input type="text" class="form-control" formControlName="email">
+            </div>
+    </div>
+    <hr>
+    <div class="row">
+            <div class="col-4">  
+        <label class="label">Age</label>
+           </div>
+           <div class="col-8">
+           <input type="text" class="form-control" formControlName="age">
+           </div>
+    </div>
+    <hr>
+    <div class="row">
+            <div class="col-4">
+            <label class="label">Mobile No.</label>
+            </div>
+            <div class="col-8">
+            <input type="number" class="form-control" formControlName="phone">
+            </div>
+    </div>
+    <hr>
+    <div class="row">
+            <button class="btn btn-success" [disabled]="!myForm.valid" type="submit">click me</button>
+        </div>
+        </form>
+    </div>
+    </div>
